@@ -103,7 +103,7 @@ export default function Home() {
             <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-90`} />
             
             {/* Slide Details */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-center items-start text-left">
+            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-center items-start text-left pl-16 sm:pl-20 lg:pl-8">
               <motion.span
                 initial={{ opacity: 0, y: -20 }}
                 animate={index === currentSlide ? { opacity: 1, y: 0 } : {}}
@@ -150,14 +150,14 @@ export default function Home() {
         {/* Carousel controls */}
         <button
           onClick={handlePrevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/25 text-white hover:bg-black/40 border border-white/5 backdrop-blur-md hover:scale-105 active:scale-95 transition-all"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-black/25 text-white hover:bg-black/40 border border-white/5 backdrop-blur-md hover:scale-105 active:scale-95 transition-all"
           aria-label="Previous slide"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
         <button
           onClick={handleNextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/25 text-white hover:bg-black/40 border border-white/5 backdrop-blur-md hover:scale-105 active:scale-95 transition-all"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-black/25 text-white hover:bg-black/40 border border-white/5 backdrop-blur-md hover:scale-105 active:scale-95 transition-all"
           aria-label="Next slide"
         >
           <ChevronRight className="w-5 h-5" />
