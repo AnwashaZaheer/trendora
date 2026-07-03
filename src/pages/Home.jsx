@@ -103,7 +103,7 @@ export default function Home() {
             <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} opacity-90`} />
             
             {/* Slide Details */}
-            <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-20 flex flex-col justify-center items-start text-left pl-16 sm:pl-20 lg:pl-8">
+            <div className="relative max-w-7xl mx-auto w-full z-20 flex flex-col justify-center items-start text-left px-24 sm:px-28 lg:px-20 xl:px-24">
               <motion.span
                 initial={{ opacity: 0, y: -20 }}
                 animate={index === currentSlide ? { opacity: 1, y: 0 } : {}}
