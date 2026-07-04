@@ -1,4 +1,4 @@
-﻿import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { api } from '../services/api';
 
 const AuthContext = createContext();
@@ -35,29 +35,19 @@ const DEFAULT_USERS = [
 ];
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [users, setUsers] = useState([]);
-
-  // Initialize users list and active session
-  useEffect(() => {
-    // Load all registered users
-    const localUsers = localStorage.getItem('trendora_users');
-    let loadedUsers = DEFAULT_USERS;
-    if (localUsers) {
-      loadedUsers = JSON.parse(localUsers);
-    } else {
-      localStorage.setItem('trendora_users', JSON.stringify(DEFAULT_USERS));
-    }
-    setUsers(loadedUsers);
-
-    // Load current active session
+  const [user, setUser] = useState(() => {
     const currentUser = localStorage.getItem('trendora_current_user');
-    if (currentUser) {
-      setUser(JSON.parse(currentUser));
+    return currentUser ? JSON.parse(currentUser) : null;
+  });
+  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState(() => {
+    const localUsers = localStorage.getItem('trendora_users');
+    if (localUsers) {
+      return JSON.parse(localUsers);
     }
-    setLoading(false);
-  }, []);
+    localStorage.setItem('trendora_users', JSON.stringify(DEFAULT_USERS));
+    return DEFAULT_USERS;
+  });
 
   // Register a new user locally
   const register = async (userData) => {

@@ -17,7 +17,7 @@ const HERO_SLIDES = [
     cta: 'Shop Clothes',
     category: "men's clothing",
     bgGradient: 'from-brand-700 via-[#7c3aed] to-[#5b21b6]',
-    tag: '🔥 Everyone\'s Buying'
+    tag: ' Everyone\'s Buying'
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const HERO_SLIDES = [
     cta: 'Browse Tech',
     category: 'electronics',
     bgGradient: 'from-[#1a1330] via-[#2e2650] to-[#0f0c1a]',
-    tag: '⚡ Just Dropped'
+    tag: ' Just Dropped'
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const HERO_SLIDES = [
     cta: 'Find Your Piece',
     category: 'jewelery',
     bgGradient: 'from-[#6d28d9] via-[#8b5cf6] to-[#4c1d95]',
-    tag: '✨ Customer Fav'
+    tag: ' Customer Fav'
   }
 ];
 
